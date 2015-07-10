@@ -1,0 +1,27 @@
+{
+  "name": "serv-ssl-hooleygan",
+  "version": "0.0.1",
+  "description": "An experimental microsite to communicate volunteer opportunities within SERV S&SL.  If you're looking for information about SERV Surrey & South London check out the website http://servssl.org.uk/",
+  "scripts": {
+    "test": "gulp test",
+    "dev": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dorightdigital/serv-ssl-hooleygan.git"
+  },
+  "author": "Mat Carey <mat@dorightdigital.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dorightdigital/serv-ssl-hooleygan/issues"
+  },
+  "homepage": "https://github.com/dorightdigital/serv-ssl-hooleygan",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-jasmine": "^2.0.1",
+    "gulp-jslint": "^0.2.2",
+    "gulp-sass": "^2.0.3",
+    "normalize.css": "^3.0.3"
+  }
+}
