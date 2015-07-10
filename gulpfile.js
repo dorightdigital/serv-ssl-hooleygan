@@ -3,6 +3,7 @@ var gulp = require('gulp');
 var jslint = require('gulp-jslint');
 var sass = require('gulp-sass');
 var concat = require('gulp-concat');
+var jasmine = require('gulp-jasmine');
 
 gulp.task('lint', function() {
   return gulp.src('js/*.js')
@@ -25,6 +26,13 @@ gulp.task('scripts', function() {
 gulp.task('watch', function() {
   gulp.watch('js/*.js', ['lint', 'scripts']);
   gulp.watch('scss/*.scss', ['sass']);
+  gulp.watch(['js/*.js', 'spec/*.js'], ['jasmine']);
+});
+
+gulp.task('jasmine', function () {
+  return gulp.src('spec/*.js')
+    .pipe(jasmine());
 });
 
 gulp.task('default', ['lint', 'sass', 'scripts', 'watch']);
+gulp.task('test', ['lint', 'jasmine']);
