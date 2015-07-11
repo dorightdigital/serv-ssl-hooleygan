@@ -5,9 +5,16 @@
   <title>SERV Surrey &amp; South London | Are you a Hooleygan?</title>
   <link rel="shortcut icon" href="http://www.servssl.org.uk/wp-content/uploads/2013/11/favicon.png"/>
   <link rel="stylesheet" href="all.css"/>
-  <meta name="viewport" content="width=device-width; initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
 </head>
 <body>
-<h1>Welcome</h1>
+<form id="control_panel" style="float:right;width:30%;text-align:left;padding-top:20px">
+  <input type="text" placeholder="Your postcode" id="postcode"/>
+  <br>
+  <input type="submit">
+</form>
+<div id="directions_panel" style="margin:20px;background-color:#FFEE77;"></div>
+<script src="all.js"></script>
 </body>
 </html>

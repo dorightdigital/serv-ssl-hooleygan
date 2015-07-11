@@ -17,11 +17,15 @@
   },
   "homepage": "https://github.com/dorightdigital/serv-ssl-hooleygan",
   "devDependencies": {
+    "builder-builder": "^1.0.1",
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",
     "gulp-jasmine": "^2.0.1",
     "gulp-jslint": "^0.2.2",
     "gulp-sass": "^2.0.3",
+    "jquery": "^1.11.3",
+    "js-config": "^1.0.3",
+    "lodash": "^3.10.0",
     "normalize.css": "^3.0.3"
   }
 }

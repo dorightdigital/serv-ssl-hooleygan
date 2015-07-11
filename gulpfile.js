@@ -7,7 +7,11 @@ var jasmine = require('gulp-jasmine');
 
 gulp.task('lint', function() {
   return gulp.src('js/*.js')
-    .pipe(jslint());
+    .pipe(jslint({
+      predef: ['JsConfig', 'jQuery', '$', 'google', '_', 'window'],
+      indent: 2,
+      nomen: true
+    }));
 });
 
 gulp.task('sass', function() {
@@ -18,7 +22,12 @@ gulp.task('sass', function() {
 });
 
 gulp.task('scripts', function() {
-  return gulp.src('js/*.js')
+  return gulp.src([
+    'node_modules/lodash/index.js',
+    'node_modules/jquery/dist/jquery.min.js',
+    'node_modules/js-config/src/JsConfig.js',
+    'node_modules/builder-builder/src/builderBuilder.js',
+    'js/*.js'])
     .pipe(concat('all.js'))
     .pipe(gulp.dest('dist'));
 });
