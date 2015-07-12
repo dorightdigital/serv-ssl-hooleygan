@@ -4,6 +4,7 @@
   "description": "An experimental microsite to communicate volunteer opportunities within SERV S&SL.  If you're looking for information about SERV Surrey & South London check out the website http://servssl.org.uk/",
   "scripts": {
     "test": "gulp test",
+    "build": "gulp build",
     "dev": "gulp"
   },
   "repository": {
@@ -26,6 +27,7 @@
     "jquery": "^1.11.3",
     "js-config": "^1.0.3",
     "lodash": "^3.10.0",
+    "moment": "^2.10.3",
     "normalize.css": "^3.0.3"
   }
 }

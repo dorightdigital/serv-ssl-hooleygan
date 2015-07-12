@@ -24,6 +24,7 @@ gulp.task('sass', function() {
 gulp.task('scripts', function() {
   return gulp.src([
     'node_modules/lodash/index.js',
+    'node_modules/moment/moment.js',
     'node_modules/jquery/dist/jquery.min.js',
     'node_modules/js-config/src/JsConfig.js',
     'node_modules/builder-builder/src/builderBuilder.js',
@@ -44,4 +45,5 @@ gulp.task('jasmine', function () {
 });
 
 gulp.task('default', ['lint', 'sass', 'scripts', 'watch']);
+gulp.task('build', ['sass', 'scripts']);
 gulp.task('test', ['lint', 'jasmine']);
