@@ -1,19 +1,55 @@
+$bg:#b51500;
 
 html, body, #map-canvas {
   height: 100%;
-  margin: 0px;
-  padding: 0px
+  margin: 0;
+  padding: 0;
+}
+
+body.loading {
+  display: none;
 }
 
 #panel {
   position: absolute;
-  top: 5px;
   left: 50%;
   margin-left: -180px;
   z-index: 5;
   background-color: #fff;
   padding: 5px;
   border: 1px solid #999;
+}
+
+form {
+  float: right;
+  width: 30%;
+  text-align: left;
+  padding-top: 20px;
+  display: none;
+  h1 {
+    font-weight: normal;
+  }
+  body.no-route & {
+    font-size: 35px;
+    padding: 10px 30px;
+    color: black;
+    float: none;
+    width: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    text-align: center;
+    display: block;
+
+  }
+}
+
+#directions_panel {
+  margin: 20px;
+  padding: 0 10px;
 }
 
 #map-canvas {

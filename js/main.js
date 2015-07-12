@@ -5,7 +5,10 @@
 
   var lookup = new RouteLookup(),
     mapDisplay = new RouteDisplay($('<div/>').attr('id', 'map-canvas').prependTo($('body'))[0]),
-    interpreter = new RouteInterpreter();
+    interpreter = new RouteInterpreter(),
+    $root = $('body');
+
+  $root.addClass('no-route').removeClass('loading');
 
   lookup.addRouteProcessor(mapDisplay);
   lookup.addRouteProcessor(interpreter);
@@ -13,6 +16,7 @@
   $('form').on('submit', function (e) {
     e.preventDefault();
 
+    $root.removeClass('no-route');
     lookup.getRouteForPostcode($('#postcode').val());
   });
 
@@ -37,6 +41,10 @@
     addTimeItem('leaveHooley', 'Leave Hooley');
     addTimeItem('arriveAtHome', 'Arrive at Home');
 
+    $directionsPanel.append($('<a/>').attr({href: '#'}).text('Start Again').click(function (e) {
+      e.preventDefault();
+      $root.addClass('no-route');
+    }));
   });
 
 }());
