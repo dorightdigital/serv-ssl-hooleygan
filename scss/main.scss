@@ -10,6 +10,10 @@ body.loading {
   display: none;
 }
 
+body.no-route #map-canvas {
+  background: white;
+}
+
 #panel {
   position: absolute;
   left: 50%;
@@ -28,9 +32,22 @@ form {
   display: none;
   h1 {
     font-weight: normal;
+    font-size: 50px;
+    color: #333;
+    strong {
+      //color: #666;
+      font-weight: normal;
+    }
+  }
+  input {
+    margin-bottom: 1em;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 8px;
   }
   body.no-route & {
-    font-size: 35px;
+    font-size: 40px;
     padding: 10px 30px;
     color: black;
     float: none;
