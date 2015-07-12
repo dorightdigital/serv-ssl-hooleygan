@@ -35,7 +35,6 @@ form {
     font-size: 50px;
     color: #333;
     strong {
-      //color: #666;
       font-weight: normal;
     }
   }
@@ -45,6 +44,10 @@ form {
     border: 1px solid black;
     border-radius: 5px;
     padding: 8px;
+  }
+  .error {
+    font-size: 20px;
+    color: red;
   }
   body.no-route & {
     font-size: 40px;

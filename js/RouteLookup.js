@@ -48,13 +48,18 @@ var RouteLookup = (function (mapsApi) {
           if (status === mapsApi.DirectionsStatus.OK) {
             _.invoke(self.dataProcessors, 'processRoute', response);
           } else {
-            throw new Error(['Response not OK', status, response]);
+            if (self.errorHandler) {
+              self.errorHandler();
+            }
           }
         });
       });
     },
     addRouteProcessor: function (dp) {
       this.dataProcessors.push(dp);
+    },
+    onRouteError: function (fn) {
+      this.errorHandler = fn;
     }
   });
 

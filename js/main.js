@@ -13,19 +13,36 @@
   lookup.addRouteProcessor(mapDisplay);
   lookup.addRouteProcessor(interpreter);
 
+  function showError(text) {
+    $('form').find('.error').remove();
+    $('form').append($('<p/>').addClass('error').text(text));
+  }
+
   $('form').on('submit', function (e) {
     e.preventDefault();
 
-    $root.removeClass('no-route');
-    lookup.getRouteForPostcode($('#postcode').val());
+    var postcode = $('#postcode').val();
+    if (postcode) {
+      lookup.getRouteForPostcode(postcode);
+    } else {
+      showError('Please enter a postcode');
+    }
+  });
+
+  lookup.onRouteError(function () {
+    $root.addClass('no-route');
+    showError('There was an error with your route, please try again.');
   });
 
   interpreter.onNewData(function (interpretation) {
+    $root.removeClass('no-route');
     var $directionsPanel = $('#directions_panel');
+
     function addItem(key, label, parent) {
       parent = parent || interpretation;
       $directionsPanel.append($('<p/>').text(label + ': ' + parent[key]));
     }
+
     function addTimeItem(key, label) {
       addItem(key, label, interpretation.times);
     }
